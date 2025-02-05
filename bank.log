@@ -1,0 +1,316 @@
+2025-02-03 16:55:33,903 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-03 16:55:33,945 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-03 16:55:33,955 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-03 16:57:34,461 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-03 17:00:34,593 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BC'
+2025-02-03 17:00:41,485 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AC'
+2025-02-03 17:00:41,487 - INFO - Úèet 10006 vytvoøen v databázi.
+2025-02-03 17:00:59,895 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD'
+2025-02-03 17:01:21,875 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10006/10.1.2.3 5000'
+2025-02-03 17:01:21,877 - INFO - Úèet 10006 aktualizován, nový zùstatek: 5000.
+2025-02-03 17:02:02,156 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10006/10.1.2.3 666'
+2025-02-03 17:02:02,159 - INFO - Úèet 10006 aktualizován, nový zùstatek: 4334.
+2025-02-03 17:02:14,996 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB'
+2025-02-03 17:02:23,837 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB 10006/10.1.2.3'
+2025-02-03 17:02:37,427 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10006/10.1.2.3'
+2025-02-03 17:02:37,428 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 86, in process_command
+    self.bank_service.remove_account(account)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 58, in remove_account
+    raise Exception("Nelze smazat bankovní úèet na kterém jsou finance.")
+Exception: Nelze smazat bankovní úèet na kterém jsou finance.
+2025-02-03 17:03:04,567 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BA'
+2025-02-03 17:03:38,088 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BN'
+2025-02-03 17:03:45,947 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AC'
+2025-02-03 17:03:45,950 - INFO - Úèet 10007 vytvoøen v databázi.
+2025-02-03 17:03:49,578 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BN'
+2025-02-03 17:09:11,349 - INFO - Pøipojen klient: 10.0.0.98
+2025-02-03 17:10:00,489 - INFO - Pøijat pøíkaz od 10.0.0.98: 'BC'
+2025-02-03 17:10:09,247 - INFO - Pøijat pøíkaz od 10.0.0.98: 'AC'
+2025-02-03 17:10:09,249 - INFO - Úèet 10008 vytvoøen v databázi.
+2025-02-03 17:10:34,841 - INFO - Pøijat pøíkaz od 10.0.0.98: 'AD 10008/10.1.2.3 7392'
+2025-02-03 17:10:34,843 - INFO - Úèet 10008 aktualizován, nový zùstatek: 7392.
+2025-02-03 17:11:14,113 - INFO - Pøijat pøíkaz od 10.0.0.98: 'AW 10008/10.1.2.3 392'
+2025-02-03 17:11:14,114 - INFO - Úèet 10008 aktualizován, nový zùstatek: 7000.
+2025-02-03 17:11:30,115 - INFO - Pøijat pøíkaz od 10.0.0.98: 'AB 10008/10.1.2.3'
+2025-02-03 17:11:48,333 - INFO - Pøijat pøíkaz od 10.0.0.98: 'AR 10008/10.1.2.3'
+2025-02-03 17:11:48,334 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 86, in process_command
+    self.bank_service.remove_account(account)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 58, in remove_account
+    raise Exception("Nelze smazat bankovní úèet na kterém jsou finance.")
+Exception: Nelze smazat bankovní úèet na kterém jsou finance.
+2025-02-03 17:11:56,801 - INFO - Pøijat pøíkaz od 10.0.0.98: 'BA'
+2025-02-03 17:12:03,637 - INFO - Pøijat pøíkaz od 10.0.0.98: 'BN'
+2025-02-03 20:05:34,205 - INFO - Server byl ukonèen.
+2025-02-03 20:05:40,713 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-03 20:05:41,127 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-03 20:05:41,284 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-03 20:06:05,833 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-03 20:06:22,435 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BC'
+2025-02-03 20:07:19,746 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR'
+2025-02-03 20:07:27,387 - INFO - Pøijat pøíkaz od 127.0.0.1: 'v'
+2025-02-03 20:07:28,696 - INFO - Pøijat pøíkaz od 127.0.0.1: 'a'
+2025-02-03 20:07:31,086 - INFO - Pøijat pøíkaz od 127.0.0.1: 'Ba'
+2025-02-03 20:07:40,096 - INFO - Pøijat pøíkaz od 127.0.0.1: 'ba'
+2025-02-03 20:07:41,246 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BA'
+2025-02-03 20:07:44,826 - INFO - Pøijat pøíkaz od 127.0.0.1: 'bC'
+2025-02-03 20:07:46,336 - INFO - Pøijat pøíkaz od 127.0.0.1: 'bc'
+2025-02-03 20:19:17,899 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10008/10.1.2.3'
+2025-02-03 20:19:17,900 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 86, in process_command
+    self.bank_service.remove_account(account)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 53, in remove_account
+    balance = self.repository.get_account_balance(account)
+AttributeError: 'BankRepository' object has no attribute 'get_account_balance'
+2025-02-03 20:20:31,692 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10008/10.1.2.3'
+2025-02-03 20:20:31,692 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 86, in process_command
+    self.bank_service.remove_account(account)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 53, in remove_account
+    balance = self.repository.get_balance(account)
+AttributeError: 'BankRepository' object has no attribute 'get_account_balance'
+2025-02-03 20:20:36,757 - INFO - Server byl ukonèen.
+2025-02-03 20:20:42,147 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-03 20:20:42,184 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-03 20:20:42,193 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-03 20:20:55,909 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-03 20:20:57,501 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BC'
+2025-02-03 20:21:11,822 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10008/10.1.2.3'
+2025-02-03 20:22:32,953 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB 10008/10.1.2.3'
+2025-02-03 20:23:13,895 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10008/10.1.2.3'
+2025-02-03 20:31:08,939 - INFO - Server byl ukonèen.
+2025-02-03 20:31:20,824 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB'
+2025-02-03 20:34:49,276 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-03 20:34:49,329 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-03 20:34:49,338 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-03 20:35:05,298 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-03 20:35:06,449 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BC'
+2025-02-03 20:35:11,969 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR'
+2025-02-03 20:35:37,419 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10006/10.1.2.3'
+2025-02-03 20:35:58,939 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10006/10.1.2.3 4334'
+2025-02-03 20:35:58,979 - INFO - Úèet 10006 aktualizován, nový zùstatek: 0.
+2025-02-03 20:36:08,529 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB 10006/10.1.2.3'
+2025-02-03 20:36:20,090 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10006/.10.1.2.3'
+2025-02-03 20:36:55,721 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 1006/10.1.2.3'
+2025-02-03 20:36:55,729 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 86, in process_command
+    return self.bank_service.remove_account(account)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 53, in remove_account
+    balance = self.repository.get_balance(account)
+  File "D:\Users\matou\Jecna\Banka\src\repository\bank_repository.py", line 82, in get_balance
+    raise Exception("Èíslo bankovního úètu neexistuje.")
+Exception: Èíslo bankovního úètu neexistuje.
+2025-02-03 20:37:08,770 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10006/10.2.3.4'
+2025-02-03 20:37:18,340 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10006/10.1.2.3'
+2025-02-03 20:37:18,343 - INFO - Úèet 10006 smazán z databáze.
+2025-02-03 20:48:26,014 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR'
+2025-02-03 20:48:36,724 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10006/10.1.2.3'
+2025-02-03 20:48:36,726 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 86, in process_command
+    return self.bank_service.remove_account(account)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 53, in remove_account
+    balance = self.repository.get_balance(account)
+  File "D:\Users\matou\Jecna\Banka\src\repository\bank_repository.py", line 82, in get_balance
+    raise Exception("Èíslo bankovního úètu neexistuje.")
+Exception: Èíslo bankovního úètu neexistuje.
+2025-02-03 21:35:04,258 - INFO - Server byl ukonèen.
+2025-02-03 21:35:06,014 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-03 21:35:06,051 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-03 21:35:06,060 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-03 21:35:17,745 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-03 21:35:20,228 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BC'
+2025-02-03 21:35:55,019 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10007/10.1.2.3'
+2025-02-03 21:35:55,021 - INFO - Úèet 10007 smazán z databáze.
+2025-02-03 21:36:21,849 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR'
+2025-02-03 21:36:39,500 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10000/10.2.2.3'
+2025-02-03 21:36:54,340 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10000/10.1.2.3'
+2025-02-03 21:36:54,342 - INFO - Úèet 10000 smazán z databáze.
+2025-02-03 21:37:06,850 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10002/10.1.2.3'
+2025-02-03 21:37:57,791 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10002/10.1.2.3'
+2025-02-03 21:38:22,472 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10002/10.1.2.3 4000'
+2025-02-03 21:38:22,474 - INFO - Úèet 10002 aktualizován, nový zùstatek: 0.
+2025-02-03 21:38:32,222 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BA'
+2025-02-03 21:38:34,702 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BN'
+2025-02-03 21:38:51,872 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10002/10.1.2.3'
+2025-02-03 21:38:51,874 - INFO - Úèet 10002 smazán z databáze.
+2025-02-03 21:46:21,712 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10005/10.1.2.3 500'
+2025-02-03 21:46:21,742 - INFO - Úèet 10005 aktualizován, nový zùstatek: 5500.
+2025-02-03 21:49:35,826 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10005/10.1.2.3'
+2025-02-03 21:50:19,765 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 156/10.1.2.3'
+2025-02-03 21:50:19,766 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 86, in process_command
+    return self.bank_service.remove_account(account)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 53, in remove_account
+    balance = self.repository.get_balance(account)
+  File "D:\Users\matou\Jecna\Banka\src\repository\bank_repository.py", line 82, in get_balance
+    raise Exception("Èíslo bankovního úètu neexistuje.")
+Exception: Èíslo bankovního úètu neexistuje.
+2025-02-03 21:57:35,554 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10005/10.1.2.3'
+2025-02-03 21:58:02,516 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10005/11.1.2.3'
+2025-02-03 22:25:13,188 - INFO - Server byl ukonèen.
+2025-02-03 22:27:28,614 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-03 22:27:28,647 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-03 22:27:28,655 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-03 22:27:40,964 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-03 22:27:42,460 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BC'
+2025-02-03 22:27:42,461 - INFO - Odpovìï pro 127.0.0.1: BC 10.1.2.3
+2025-02-03 22:27:46,521 - INFO - Pøijat pøíkaz od 127.0.0.1: 'b'
+2025-02-03 22:27:46,521 - ERROR - Odpovìï pro 127.0.0.1: ER Neznámý pøíkaz.
+2025-02-03 22:28:06,201 - INFO - Pøijat pøíkaz od 127.0.0.1: 'bc'
+2025-02-03 22:28:06,201 - INFO - Odpovìï pro 127.0.0.1: BC 10.1.2.3
+2025-02-03 22:29:08,371 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10005/10.1.2.4'
+2025-02-03 22:29:08,372 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz smìøuje do jiné banky.
+2025-02-03 22:30:22,923 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR'
+2025-02-03 22:30:22,924 - ERROR - Odpovìï pro 127.0.0.1: ER Nesprávný formát pøíkazu AR.
+2025-02-03 22:30:41,013 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10005/10.1.2.3'
+2025-02-03 22:30:41,015 - ERROR - Odpovìï pro 127.0.0.1: ER Nelze smazat bankovní úèet na kterém jsou finance.
+2025-02-03 22:31:18,275 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BC'
+2025-02-03 22:31:18,275 - INFO - Odpovìï pro 127.0.0.1: BC 10.1.2.3
+2025-02-03 22:31:20,635 - INFO - Pøijat pøíkaz od 127.0.0.1: 'b'
+2025-02-03 22:31:20,635 - ERROR - Odpovìï pro 127.0.0.1: ER Neznámý pøíkaz.
+2025-02-03 22:35:19,219 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AC'
+2025-02-03 22:35:19,252 - INFO - Úèet 10009 vytvoøen v databázi.
+2025-02-03 22:35:19,252 - INFO - Odpovìï pro 127.0.0.1: AC 10009/10.1.2.3
+2025-02-03 22:35:52,239 - INFO - Pøijat pøíkaz od 127.0.0.1: 'ac'
+2025-02-03 22:35:52,242 - INFO - Úèet 10010 vytvoøen v databázi.
+2025-02-03 22:35:52,242 - INFO - Odpovìï pro 127.0.0.1: AC 10010/10.1.2.3
+2025-02-03 22:36:23,931 - INFO - Pøijat pøíkaz od 127.0.0.1: 'c'
+2025-02-03 22:36:23,931 - ERROR - Odpovìï pro 127.0.0.1: ER Neznámý pøíkaz.
+2025-02-03 22:37:52,152 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD'
+2025-02-03 22:37:52,152 - ERROR - Odpovìï pro 127.0.0.1: ER Nesprávný formát pøíkazu AD.
+2025-02-03 22:40:36,596 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10009/10.1.2.3 1000'
+2025-02-03 22:40:36,598 - INFO - Úèet 10009 aktualizován, nový zùstatek: 1000.
+2025-02-03 22:40:36,598 - INFO - Odpovìï pro 127.0.0.1: AD
+2025-02-03 22:42:08,767 - INFO - Pøijat pøíkaz od 127.0.0.1: 'ad 10010/10.1.2.3 2000'
+2025-02-03 22:42:08,773 - INFO - Úèet 10010 aktualizován, nový zùstatek: 2000.
+2025-02-03 22:42:08,773 - INFO - Odpovìï pro 127.0.0.1: AD
+2025-02-03 22:43:31,349 - INFO - Pøijat pøíkaz od 127.0.0.1: 'D 10009/10.1.2.3 1000'
+2025-02-03 22:43:31,349 - ERROR - Odpovìï pro 127.0.0.1: ER Neznámý pøíkaz.
+2025-02-03 22:44:42,711 - INFO - Pøijat pøíkaz od 127.0.0.1: 'D 10009/10.2.2.3 1000'
+2025-02-03 22:44:42,711 - ERROR - Odpovìï pro 127.0.0.1: ER Neznámý pøíkaz.
+2025-02-03 22:45:27,642 - INFO - Pøijat pøíkaz od 127.0.0.1: 'D 12345/10.1.2.3 1000'
+2025-02-03 22:45:27,642 - ERROR - Odpovìï pro 127.0.0.1: ER Neznámý pøíkaz.
+2025-02-03 22:46:26,063 - INFO - Pøijat pøíkaz od 127.0.0.1: 'D 99999999999999999/10.1.2.3 1000'
+2025-02-03 22:46:26,063 - ERROR - Odpovìï pro 127.0.0.1: ER Neznámý pøíkaz.
+2025-02-03 22:47:01,653 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 99999999999999999/10.1.2.3 1000'
+2025-02-03 22:47:01,654 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 59, in process_command
+    self.bank_service.deposit(account, amount)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 33, in deposit
+    current_balance = self.repository.get_balance(account)
+  File "D:\Users\matou\Jecna\Banka\src\repository\bank_repository.py", line 82, in get_balance
+    raise Exception("Èíslo bankovního úètu neexistuje.")
+Exception: Èíslo bankovního úètu neexistuje.
+2025-02-03 22:47:01,656 - ERROR - Odpovìï pro 127.0.0.1: ER Èíslo bankovního úètu neexistuje.
+2025-02-03 22:48:32,794 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10009/10.1.2.3 99999999999999999999999999999'
+2025-02-03 22:48:32,796 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 59, in process_command
+    self.bank_service.deposit(account, amount)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 35, in deposit
+    self.repository.update_balance(account, new_balance)
+  File "D:\Users\matou\Jecna\Banka\src\repository\bank_repository.py", line 67, in update_balance
+    cursor.execute("UPDATE Accounts SET balance = ? WHERE account = ?", new_balance, account)
+OverflowError: int too big to convert
+2025-02-03 22:48:32,797 - ERROR - Odpovìï pro 127.0.0.1: ER int too big to convert
+2025-02-03 22:49:30,796 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10009/10.1.2.3 abc'
+2025-02-03 22:49:30,797 - ERROR - Odpovìï pro 127.0.0.1: ER Èástka není ve správném formátu.
+2025-02-03 22:50:06,266 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10009/10.1.2.3 1 000'
+2025-02-03 22:50:06,267 - ERROR - Odpovìï pro 127.0.0.1: ER Nesprávný formát pøíkazu AD.
+2025-02-03 22:51:13,019 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10009/10.1.2.3 -1000'
+2025-02-03 22:51:13,019 - ERROR - Výjimka pøi zpracování pøíkazu.
+Traceback (most recent call last):
+  File "D:\Users\matou\Jecna\Banka\src\processor\command_processor.py", line 59, in process_command
+    self.bank_service.deposit(account, amount)
+  File "D:\Users\matou\Jecna\Banka\src\service\bank_service.py", line 32, in deposit
+    raise Exception("Èástka musí být nezáporné èíslo.")
+Exception: Èástka musí být nezáporné èíslo.
+2025-02-03 22:51:13,020 - ERROR - Odpovìï pro 127.0.0.1: ER Èástka musí být nezáporné èíslo.
+2025-02-03 22:51:41,448 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10009/10.1.2.3 +1000'
+2025-02-03 22:51:41,451 - INFO - Úèet 10009 aktualizován, nový zùstatek: 2000.
+2025-02-03 22:51:41,451 - INFO - Odpovìï pro 127.0.0.1: AD
+2025-02-03 22:59:09,825 - INFO - Server byl ukonèen.
+2025-02-03 22:59:11,590 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-03 22:59:11,622 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-03 22:59:11,630 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-03 22:59:26,961 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-03 22:59:27,558 - INFO - Pøijat pøíkaz od 127.0.0.1: 'bc'
+2025-02-03 22:59:27,558 - INFO - Odpovìï pro 127.0.0.1: BC 10.1.2.3
+2025-02-03 22:59:53,478 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10009/10.1.2.3 -500'
+2025-02-03 22:59:53,478 - ERROR - Výjimka pøi zpracování pøíkazu: Èástka musí být nezáporné èíslo.
+2025-02-03 22:59:53,478 - ERROR - Odpovìï pro 127.0.0.1: ER Èástka musí být nezáporné èíslo.
+2025-02-03 23:02:35,022 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10009/10.1.2.3 +500'
+2025-02-03 23:02:35,024 - INFO - Úèet 10009 aktualizován, nový zùstatek: 1500.
+2025-02-03 23:02:35,025 - INFO - Odpovìï pro 127.0.0.1: AW
+2025-02-03 23:03:30,353 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10009/10.1.2.3 +500'
+2025-02-03 23:03:30,369 - INFO - Úèet 10009 aktualizován, nový zùstatek: 1000.
+2025-02-03 23:03:30,369 - INFO - Odpovìï pro 127.0.0.1: AW
+2025-02-03 23:03:50,453 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BN'
+2025-02-03 23:03:50,454 - INFO - Odpovìï pro 127.0.0.1: BN 5
+2025-02-03 23:04:01,743 - INFO - Pøijat pøíkaz od 127.0.0.1: 'BA'
+2025-02-03 23:04:01,744 - INFO - Odpovìï pro 127.0.0.1: BA 18000
+2025-02-03 23:04:24,034 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR'
+2025-02-03 23:04:24,034 - ERROR - Odpovìï pro 127.0.0.1: ER Nesprávný formát pøíkazu AR.
+2025-02-03 23:15:04,027 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD neco/10.1.2.3 +3000'
+2025-02-03 23:15:04,027 - ERROR - Odpovìï pro 127.0.0.1: ER Èíslo úètu není èíslo.
+2025-02-03 23:15:31,277 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD neco/11.2.3.5 +3000'
+2025-02-03 23:15:31,277 - ERROR - Odpovìï pro 127.0.0.1: ER Èíslo úètu není èíslo.
+2025-02-03 23:15:51,317 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10009/11.2.3.5 +3000'
+2025-02-03 23:15:51,317 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz smìøuje do jiné banky.
+2025-02-03 23:16:21,727 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10009/10.1.2.3 +3000'
+2025-02-03 23:16:21,730 - INFO - Úèet 10009 aktualizován, nový zùstatek: 4000.
+2025-02-03 23:16:21,730 - INFO - Odpovìï pro 127.0.0.1: AD
+2025-02-03 23:16:49,569 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB'
+2025-02-03 23:16:49,569 - ERROR - Odpovìï pro 127.0.0.1: ER Nesprávný formát pøíkazu AB.
+2025-02-03 23:16:57,138 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB 10009/10.1.2.3'
+2025-02-03 23:16:57,139 - INFO - Odpovìï pro 127.0.0.1: AB 4000
+2025-02-03 23:17:08,509 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10009/10.1.2.3 5000'
+2025-02-03 23:17:08,510 - ERROR - Výjimka pøi zpracování pøíkazu: Není dostatek finanèních prostøedkù.
+2025-02-03 23:17:08,510 - ERROR - Odpovìï pro 127.0.0.1: ER Není dostatek finanèních prostøedkù.
+2025-02-03 23:18:03,810 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB 10826/10.1.2.3'
+2025-02-03 23:18:03,810 - ERROR - Výjimka pøi zpracování pøíkazu: Èíslo bankovního úètu neexistuje.
+2025-02-03 23:18:03,811 - ERROR - Odpovìï pro 127.0.0.1: ER Èíslo bankovního úètu neexistuje.
+2025-02-03 23:18:17,860 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB 10826/11.1.2.3'
+2025-02-03 23:18:17,860 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz smìøuje do jiné banky.
+2025-02-03 23:52:19,290 - INFO - Server byl ukonèen.
+2025-02-04 00:09:23,163 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-04 00:09:23,322 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-04 00:09:23,331 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-04 01:30:33,978 - INFO - Server byl ukonèen.
+2025-02-05 17:04:01,882 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-05 17:04:03,107 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-05 17:04:03,466 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-05 17:04:18,067 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-05 17:04:18,067 - INFO - Pøijat pøíkaz od 127.0.0.1: 'bc'
+2025-02-05 17:04:18,068 - INFO - Odpovìï pro 127.0.0.1: BC 10.1.2.3
+2025-02-05 17:04:19,684 - INFO - Pøijat pøíkaz od 127.0.0.1: 'bn'
+2025-02-05 17:04:19,904 - INFO - Odpovìï pro 127.0.0.1: BN 5
+2025-02-05 17:10:57,294 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AD 10005/11.1.2.3 5000'
+2025-02-05 17:10:57,294 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz smìøuje do jiné banky.
+2025-02-05 17:16:16,869 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AW 10005/11.1.2.3. 2000'
+2025-02-05 17:16:16,869 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz smìøuje do jiné banky.
+2025-02-05 17:16:36,850 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AB 10005/11.1.2.3'
+2025-02-05 17:16:36,850 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz smìøuje do jiné banky.
+2025-02-05 17:17:08,110 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10005/11.1.2.3'
+2025-02-05 17:17:08,111 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz smìøuje do jiné banky.
+2025-02-05 17:18:45,227 - INFO - Server byl ukonèen.
+2025-02-05 17:19:01,292 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10005/11.1.2.3'
+2025-02-05 17:19:01,292 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz smìøuje do jiné banky.
+2025-02-05 17:19:09,836 - INFO - Nastaven bank code: 10.1.2.3
+2025-02-05 17:19:09,871 - INFO - Pøipojeno k MSSQL databázi.
+2025-02-05 17:19:09,881 - INFO - Databáze inicializována (tabulka Accounts).
+2025-02-05 17:19:22,518 - INFO - Pøipojen klient: 127.0.0.1
+2025-02-05 17:19:22,603 - INFO - Pøijat pøíkaz od 127.0.0.1: 'bc'
+2025-02-05 17:19:22,604 - INFO - Odpovìï pro 127.0.0.1: BC 10.1.2.3
+2025-02-05 17:19:36,713 - INFO - Pøijat pøíkaz od 127.0.0.1: 'AR 10005/11.1.2.3'
+2025-02-05 17:19:36,713 - ERROR - Odpovìï pro 127.0.0.1: ER Pøíkaz musíte vyøešit v dané bance.
+2025-02-05 18:10:47,610 - INFO - Server byl ukonèen.
