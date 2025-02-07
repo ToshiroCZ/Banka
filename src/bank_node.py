@@ -1,8 +1,10 @@
+# External
 import argparse
 import logging
 import socket
 import sys
 
+# Internal
 from src.network.tcp_server import BankTCPServer, BankTCPHandler
 from src.processor.command_processor import CommandProcessor
 from src.service.bank_service import BankService
@@ -36,13 +38,10 @@ def main():
     command_processor = CommandProcessor(bank_service, bank_code)
 
     # Spuštění TCP serveru
-    server_address = ("", args.port)
-    with BankTCPServer(server_address, BankTCPHandler, command_processor) as server:
-        try:
-            server.serve_forever()
-            logger.info(f"Server naslouchá na portu {args.port} (bank code: {bank_code})")
-        except KeyboardInterrupt:
-            logger.info("Server byl ukončen.")
+    server = BankTCPServer(("0.0.0.0", args.port), BankTCPHandler, command_processor)
+    logging.info(f"Server naslouchá na {args.port} s bankovním kódem {args.bankcode}")
+
+    server.serve_forever()
 
 if __name__ == "__main__":
     main()

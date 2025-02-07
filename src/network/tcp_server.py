@@ -1,6 +1,7 @@
 import socketserver
 import logging
 
+
 class BankTCPHandler(socketserver.StreamRequestHandler):
     def handle(self):
         client_ip = self.client_address[0]
@@ -11,11 +12,14 @@ class BankTCPHandler(socketserver.StreamRequestHandler):
                 # readline() počká na znak nového řádku
                 line_bytes = self.rfile.readline()
                 if not line_bytes:
+                    logging.info(f"Klient {client_ip} ukončil spojení.")
                     break  # Konec spojení
+
                 # Dekódujeme řádek s nahrazením neplatných znaků
                 line = line_bytes.decode('utf-8', errors='replace').strip()
                 if not line:
                     continue  # Přeskočíme prázdné řádky
+
                 logging.info(f"Přijat příkaz od {client_ip}: {repr(line)}")
                 response = self.server.command_processor.process_command(line)
                 # Logujeme odpověď – pokud začíná "ER", zalogujeme jako ERROR, jinak jako INFO
@@ -30,8 +34,13 @@ class BankTCPHandler(socketserver.StreamRequestHandler):
         except Exception as e:
             logging.exception(f"Chyba při obsluze klienta {client_ip}: {e}")
 
+
 class BankTCPServer(socketserver.ThreadingTCPServer):
     allow_reuse_address = True
+
     def __init__(self, server_address, RequestHandlerClass, command_processor):
+        """
+        Inicializace TCP serveru, předání command_processoru pro zpracování příkazů.
+        """
         super().__init__(server_address, RequestHandlerClass)
         self.command_processor = command_processor

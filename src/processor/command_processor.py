@@ -2,6 +2,7 @@ import logging
 import socket
 
 class CommandProcessor:
+
     def __init__(self, bank_service, bank_code):
         self.bank_service = bank_service
         self.bank_code = bank_code
@@ -29,6 +30,8 @@ class CommandProcessor:
 
             # Příkazy AD, AW, AB – vklad, výběr, zůstatek
             elif cmd in ("AD", "AW", "AB"):
+                account_field = None
+                amount_field = None
                 # Pro AD a AW očekáváme formát: <command> <account>/<bank_code> <amount>
                 # Pro AB očekáváme: AB <account>/<bank_code>
                 if cmd in ("AD", "AW"):
@@ -113,11 +116,21 @@ class CommandProcessor:
         """
         try:
             logging.info(f"Přeposílám příkaz na banku {bank_code}: {command}")
-            with socket.create_connection((bank_code, 65525), timeout=5) as sock:
-                sock.sendall((command + "\n").encode('utf-8'))
+
+            with socket.create_connection((bank_code, 65525), timeout=15) as sock:
+                command += "\n"  # Ujisti se, že příkaz končí `\n`
+                sock.sendall(command.encode('utf-8'))
+
                 response = sock.recv(1024).decode('utf-8').strip()
                 logging.info(f"Odpověď od banky {bank_code}: {response}")
                 return response
+
+        except socket.timeout:
+            logging.error(f" Timeout: Banka {bank_code} nereaguje na portu 65525.")
+            return "ER Nelze se připojit k jiné bance (timeout)."
+        except ConnectionRefusedError:
+            logging.error(f" Spojení odmítnuto: Banka {bank_code} neběží nebo je firewall aktivní.")
+            return "ER Nelze se připojit k jiné bance (odmítnuto)."
         except Exception as e:
-            logging.error(f"Chyba při komunikaci s bankou {bank_code}: {str(e)}")
+            logging.error(f" Jiná chyba při komunikaci s bankou {bank_code}: {e}")
             return "ER Nelze se připojit k jiné bance."
