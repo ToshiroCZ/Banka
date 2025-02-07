@@ -1,0 +1,7 @@
+{
+    "conn-string": "DRIVER={ODBC Driver 17 for SQL Server};SERVER=THE-BEAST\\SQLEXPRESS;DATABASE=banka;Trusted_Connection=yes;",
+    "port": 65525,
+    "bankcode": "10.0.0.96",
+    "response_timeout": 5,
+    "client_timeout": 30
+}

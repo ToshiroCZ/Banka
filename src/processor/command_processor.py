@@ -1,11 +1,13 @@
 import logging
 import socket
 
-class CommandProcessor:
 
-    def __init__(self, bank_service, bank_code):
+class CommandProcessor:
+    def __init__(self, bank_service, bank_code, response_timeout=5, client_timeout=5):
         self.bank_service = bank_service
         self.bank_code = bank_code
+        self.response_timeout = response_timeout
+        self.client_timeout = client_timeout
 
     def process_command(self, command_line):
         """
@@ -17,23 +19,18 @@ class CommandProcessor:
                 return "ER Neplatný příkaz."
             cmd = parts[0].upper()
 
-            # Příkaz BC – vrací bank code
             if cmd == "BC":
                 return f"BC {self.bank_code}"
 
-            # Příkaz AC – vytvoření účtu
             elif cmd == "AC":
                 if len(parts) != 1:
                     return "ER Nesprávný formát příkazu AC."
                 new_account = self.bank_service.create_account()
                 return f"AC {new_account}/{self.bank_code}"
 
-            # Příkazy AD, AW, AB – vklad, výběr, zůstatek
             elif cmd in ("AD", "AW", "AB"):
                 account_field = None
                 amount_field = None
-                # Pro AD a AW očekáváme formát: <command> <account>/<bank_code> <amount>
-                # Pro AB očekáváme: AB <account>/<bank_code>
                 if cmd in ("AD", "AW"):
                     if len(parts) != 3:
                         return f"ER Nesprávný formát příkazu {cmd}."
@@ -73,7 +70,6 @@ class CommandProcessor:
                     balance = self.bank_service.get_balance(account)
                     return f"AB {balance}"
 
-            # Příkaz AR – odstranění účtu
             elif cmd == "AR":
                 if len(parts) != 2:
                     return "ER Nesprávný formát příkazu AR."
@@ -89,15 +85,12 @@ class CommandProcessor:
                     return "ER Požadavek musíte vyřešit v dané bance."
                 return self.bank_service.remove_account(account)
 
-
-            # Příkaz BA – celková částka ve všech účtech
             elif cmd == "BA":
                 if len(parts) != 1:
                     return "ER Nesprávný formát příkazu BA."
                 total = self.bank_service.get_total_amount()
                 return f"BA {total}"
 
-            # Příkaz BN – počet klientů
             elif cmd == "BN":
                 if len(parts) != 1:
                     return "ER Nesprávný formát příkazu BN."
@@ -116,15 +109,12 @@ class CommandProcessor:
         """
         try:
             logging.info(f"Přeposílám příkaz na banku {bank_code}: {command}")
-
-            with socket.create_connection((bank_code, 65525), timeout=15) as sock:
-                command += "\n"  # Ujisti se, že příkaz končí `\n`
+            with socket.create_connection((bank_code, 65525), timeout=self.response_timeout) as sock:
+                command = command.strip() + "\n"  # Zajistíme, že příkaz končí newline
                 sock.sendall(command.encode('utf-8'))
-
                 response = sock.recv(1024).decode('utf-8').strip()
                 logging.info(f"Odpověď od banky {bank_code}: {response}")
                 return response
-
         except socket.timeout:
             logging.error(f" Timeout: Banka {bank_code} nereaguje na portu 65525.")
             return "ER Nelze se připojit k jiné bance (timeout)."

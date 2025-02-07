@@ -1,4 +1,0 @@
-My sources:
-
-https://www.geeksforgeeks.org/logging-in-python/
-https://www.geeksforgeeks.org/socket-programming-python/
